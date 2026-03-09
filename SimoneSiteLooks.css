@@ -1,0 +1,126 @@
+:root{
+    --page-bg: #eb7bc0;
+    --card-bg: #ffffff;
+    --text: #222;
+    --gap: 1rem;
+}
+
+/* Page base */
+html,body{
+    height:100%;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--page-bg);
+    color: var(--text);
+    -webkit-font-smoothing:antialiased;
+}
+
+/* Header */
+header{
+    text-align:center;
+    padding: 1.5rem 1rem;
+    color: #fff;
+}
+header h1{
+    margin:0;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    /* keep the heading centered but make the background only as wide as the text */
+    display: inline-block;
+    background-color: #387780;
+    color: #fff;
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+}
+
+/* Main grid: 3 columns (two rows for 6 items) */
+main{
+    max-width: 1100px;
+    margin: 1rem auto 3rem;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    box-sizing: border-box;
+}
+
+/* Each month card */
+main section{
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+main section img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+main section p{
+    margin: 0.75rem 0 1rem;
+    padding: 0 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Make the entire card clickable when an anchor is inside the section */
+main section a.card-link{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+    align-self: stretch; /* ensure the anchor fills the section width */
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+main section a.card-link img{
+    width:100%;
+    height: 180px;
+    object-fit: cover;
+    display:block;
+}
+
+main section a.card-link p{
+    margin: 0.75rem 0 1rem;
+    padding: 0 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+}
+
+main section:hover{
+    transform: translateY(-4px);
+    transition: transform 160ms ease;
+}
+
+section:hover{
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px){
+    main{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px){
+    main{ grid-template-columns: 1fr; padding: 0.5rem; }
+    main section img{ height: 220px; }
+}
+
+/* Small touch: center content inside each card, but allow .card-link to stretch */
+main section > *:not(.card-link) { align-self: center; }
+
+
