@@ -99,6 +99,17 @@ main section a.card-link p{
     color: #333;
 }
 
+/* Month page styles */
+#monthP {
+    text-align: center;
+    background-color: #493548;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
 main section:hover{
     transform: translateY(-4px);
     transition: transform 160ms ease;
@@ -123,4 +134,29 @@ section:hover{
 /* Small touch: center content inside each card, but allow .card-link to stretch */
 main section > *:not(.card-link) { align-self: center; }
 
+
+body #month {
+    background-color: #493548;
+}
+
+body#month main {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+#back-link {
+    margin-top: auto;
+    text-align: center;
+    background-color: #DB5461;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1rem auto;
+}
 
